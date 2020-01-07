@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "TV Set",
+      "price": 300,
+      "pictureUrl": "http://www.pngmart.com/files/1/TV-Transparent-PNG.png"
+    },
+    {
+      "id": 2,
+      "productName": "Game Console",
+      "price": 200,
+      "pictureUrl": "http://www.pngall.com/wp-content/uploads/2/Console-PNG-Transparent-HD-Photo.png"
+    },
+    {
+      "id": 3,
+      "productName": "Sofa",
+      "price": 100,
+      "pictureUrl": "http://www.pngall.com/wp-content/uploads/4/Luxury-Couch-PNG-Free-Image.png"
+    },
+    {
+      "id": 4,
+      "productName": "Macbook",
+      "price": 900,
+      "pictureUrl": "https://cdn4.iconfinder.com/data/icons/MacBook_Pro/512/leopard.png"
+    },
+    {
+      "id": 5,
+      "productName": "Iphone",
+      "price": 800,
+      "pictureUrl": "http://www.pngall.com/wp-content/uploads/2016/06/IPhone-PNG-Picture-PNG-Clipart.png"
+    },
+    {
+      "id": 6,
+      "productName": "Mouse",
+      "price": 30,
+      "pictureUrl": "https://www.iconhot.com/icon/png/apple-products/256/mighty-mouse.png"
+    },
+    {
+      "id": 7,
+      "productName": "Watch",
+      "price": 30,
+      "pictureUrl": "https://pngimage.net/wp-content/uploads/2018/06/iwatch-png.png"
+    },
+    {
+      "id": 8,
+      "productName": "Iphone",
+      "price": 130,
+      "pictureUrl": "https://pngimage.net/wp-content/uploads/2018/06/nespresso-png-8.png"
+    },
+    {
+      "id": 9,
+      "productName": "ROOMBA",
+      "price": 400,
+      "pictureUrl": "https://pngimage.net/wp-content/uploads/2018/06/irobot-png-4.png"
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    }
+  ]
+}
