@@ -3,10 +3,9 @@
   <div style="text-align:center;">
    <img center src="./assets/img/logo2.png" style="width:100%" />  
    </div>
-  </body>
-  
-  
-  <div class="row card-deck">
+</body>
+
+<div class="row card-deck">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
       <div class="card text-center">
         <div class="card-header">
@@ -17,7 +16,6 @@
           <a href="#"><img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
           <h5 class="card-title">${{product.price}}</h5>
         </div>
-  
 
         <div>
           <!-- <div class="col-4 padding-0" >
@@ -38,10 +36,6 @@
   </button>
           </div>-->
         </div>
-
-
-
-
 
     </div>
   </div>
