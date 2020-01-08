@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import { Router } from '@angular/router';
+import { Http, Response, Headers } from '@angular/http';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  //constructor(private router: Router, private http: Http) { }
+
 
   ngOnInit() {
+    console.log('login Component Running...');
   }
 
+  loginUser(){
+
+  }
 }
