@@ -53,33 +53,24 @@
       "productName": "ROOMBA",
       "price": 400,
       "pictureUrl": "https://pngimage.net/wp-content/uploads/2018/06/irobot-png-4.png"
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
     }
-  ]
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Michele",
+      "password": 123456
+    },
+    {
+      "id": 2,
+      "name": "Davi",
+      "password": 123456
+    },    
+  
+  {
+    "id": 3,
+    "name": "Wellington",
+    "password": 123456
+  }
+]
 }

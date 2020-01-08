@@ -12,6 +12,7 @@ import { routing } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './orders/orders.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OrdersComponent } from './orders/orders.component';
     ProductsComponent,
     HomeComponent,
     LoginComponent,
-    OrdersComponent
+    OrdersComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
