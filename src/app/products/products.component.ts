@@ -34,14 +34,16 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-   // copia o produto para ser enviado ao carrinho.
-   saveCart() {
-    this.productService.addToCart(this.selectedProducts).subscribe(x => console.log(x));
+
+  // copia o produto para ser enviado ao carrinho.
+  sendToCart() {
+    this.productService.sendCartToBackend(this.selectedProducts).subscribe(x => console.log(x));
   }
 
   // copia o produto para ser enviado ao carrinho.
-  addToCart(product: Product) {
-    this.selectedProducts.push(product);
+  selectProduct(productSelected: Product) {
+    this.selectedProducts.push(productSelected);
+    console.log('Product selected is: ' + JSON.stringify(productSelected));
   }
 
   // Chama o serviço para obter todos os produto

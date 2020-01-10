@@ -1,9 +1,12 @@
 
 <body>
   <div style="text-align:center;">
-   <img center src="./assets/img/logo2.png" style="width:100%" />  
+   <img center src="./assets/img/logo2.png" style="width:100%" />
    </div>
 </body>
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)="sendToCart()">Checkout Cart</button>
+</div>
 
 <div class="row card-deck">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
@@ -11,7 +14,7 @@
         <div class="card-header">
           <h4>{{product.productName}}</h4>
         </div>
-  
+
         <div class="card-body">
           <a href="#"><img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
           <h5 class="card-title">${{product.price}}</h5>

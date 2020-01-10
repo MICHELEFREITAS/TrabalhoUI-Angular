@@ -38,11 +38,10 @@ export class ProductService {
       );
   }
 
-  // adiciona ao carrinho
 
-  addToCart(product: Product[]) {
-    //return this.httpClient.post(this.urlAddToCart, JSON.stringify(product), this.httpOptions
-    return this.httpClient.post(this.url, JSON.stringify(product), this.httpOptions
+  // adiciona ao carrinho
+  sendCartToBackend(product: Product[]) {
+    return this.httpClient.post(this.urlAddToCart, JSON.stringify(product), this.httpOptions
     ).pipe(
       catchError(this.handleError)
     );
