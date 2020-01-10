@@ -1,6 +1,8 @@
-# UI for Product Service 
+# Microservice Online Shop UI 
 
-This project was implemented with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14 and its purpose is to serve client to see the list of products and allow to choose those that desire to buy.
+This project was implemented with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14 and its purpose is to serve client to see the list of products and allow to choose those that wants to buy, go to cart and then pay it.
+
+So it has 3 microservices to make it work and this UI intends to show all this steps and related data for the user. 
 
 ## Run Application
 
