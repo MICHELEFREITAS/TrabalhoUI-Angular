@@ -10,8 +10,9 @@ import { Product } from '../models/product';
 export class ProductService {
 
   // url = 'http://localhost:3000/products';
-  url = 'http://localhost:8071/products';
-  urlAddToCart = 'http://productbk:8071/product-rabbitmq/producer';
+  url = 'http://loja-microservicos.info:8071/products';
+  urlAddToCart = 'http://loja-microservicos.info:8071/product-rabbitmq/producer';
+  urlGetCart = 'http://loja-microservicos.info:8071/product-rabbitmq/producer';
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
