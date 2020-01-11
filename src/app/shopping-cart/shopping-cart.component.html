@@ -1,19 +1,21 @@
-<div class="card text-white bg-info mb-3" style="max-width: 30rem;height:20rem;">
-  <div class="card-header text-center">Shopping Cart</div>
+<div class="card text-white bg-info mb-3" style="max-width: 25rem;height:20rem;">
+  <div class="card-header text-center"> Purchase Summary</div>
   <div class="card-body">
     <h5 class="card-title">Total: ${{product.price}}</h5>
       <hr>
-      <h6 class="card-title">Items bought:</h6>
+      <h6 class="card-title">Bought:</h6>
 
       <ul>
-          <li *ngFor="let product of products">
+          <li *ngFor="let product">
               {{product.name }} - {{product.price}} pcs.
           </li>
       </ul>
 
-      <button class="btn btn-light btn-block" (click)="finishOrder()"
-              [disabled]="product.price.length == 0">Checkout
+      <button class="btn btn-light btn-block" (click)="sendToCart()" routerLink="/shopping-cart"
+              [disabled]="product.price.length == 0">
+              Confirm Purchase
       </button>
+      <nav class="btn btn-light btn-block" click="/products">Cancel</nav>
+   
   </div>
 </div>
-

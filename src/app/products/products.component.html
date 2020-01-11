@@ -1,9 +1,35 @@
-
 <body>
-  <div style="text-align:center;">
-   <img center src="./assets/img/logo2.png" style="width:100%" />  
+  <div class="control">
+  <div  class="main-banner"  style="text-align:center;position: relative">
+   <img center src="./assets/img/logo2.png" style="width:100%" />
    </div>
+
+<div class="superior" >
+<div class="card text-white bg-info mb-3" style="max-width: 35rem;height:15rem;">
+  <div class="card-header text-center"> Purchase Summary</div>
+  <div class="card-body">
+    <h5 class="card-title">Total: ${{product.price}}</h5>
+      <hr>
+      <h6 class="card-title">Items bought:</h6>
+
+      <ul>
+          <li *ngFor="let product">
+              {{product.name }} - {{product.price}} pcs.
+          </li>
+      </ul>
+
+      <button class="btn btn-light btn-block" (click)="sendToCart()" routerLink="/shopping-cart"
+              [disabled]="product.price.length == 0">Checkout
+      </button>
+
+      
+  </div>
+</div>
+</div>
+</div>
 </body>
+
+
 
 <div class="row card-deck">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
@@ -11,7 +37,7 @@
         <div class="card-header">
           <h4>{{product.productName}}</h4>
         </div>
-  
+
         <div class="card-body">
           <a href="#"><img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
           <h5 class="card-title">${{product.price}}</h5>
@@ -27,7 +53,8 @@
 
 </button>-->
 
-        <a routerLink="/shopping-cart" class="btn btn-primary">Add To Cart</a>
+<button type="button" class="btn btn-primary" (click)="sendToCart()">Add To Cart</button>
+        
 
             <!-- </div>
           <div class="col-12">
@@ -40,5 +67,4 @@
     </div>
   </div>
 </div>
-
 

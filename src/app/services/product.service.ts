@@ -9,9 +9,10 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  url = 'http://localhost:3000/products';
-  //url = 'http://localhost:8071/products';
-  //urlAddToCart = 'http://productbk:8071/product-rabbitmq/producer';
+   url = 'http://localhost:3000/products';
+  //url = 'http://loja-microservicos.info:8071/products';
+  //urlAddToCart = 'http://loja-microservicos.info:8071/product-rabbitmq/producer';
+  //urlGetCart = 'http://loja-microservicos.info:8071/product-rabbitmq/producer';
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -37,14 +38,13 @@ export class ProductService {
       );
   }
 
-  // adiciona ao carrinho
 
-  addToCart(product: Product[]) {
-    //return this.httpClient.post(this.urlAddToCart, JSON.stringify(product), this.httpOptions
-    return this.httpClient.post(this.url, JSON.stringify(product), this.httpOptions
+  // adiciona ao carrinho
+  sendCartToBackend(product: Product[]) {
+    /*return this.httpClient.post(this.urlAddToCart, JSON.stringify(product), this.httpOptions
     ).pipe(
       catchError(this.handleError)
-    );
+    );*/
   }
 
   // salva um produto
