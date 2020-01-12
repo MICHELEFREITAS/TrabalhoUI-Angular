@@ -1,19 +1,18 @@
 <div class="card text-white bg-info mb-3" style="max-width: 30rem;height:20rem;">
   <div class="card-header text-center">Shopping Cart</div>
   <div class="card-body">
-    <h5 class="card-title">Total: ${{product.price}}</h5>
+    <h5 class="card-title">Cart Id: {{carts?.id}}</h5>
+    <h5 class="card-title">Date: {{carts?.date | date: 'dd/MM/yyyy'}}</h5>
       <hr>
       <h6 class="card-title">Items bought:</h6>
 
       <ul>
-          <li *ngFor="let product of products">
-              {{product.name }} - {{product.price}} pcs.
+          <li *ngFor="let product of carts?.productsList">
+              {{product?.id}} - {{product?.productName}}  - {{product?.quantity}} pcs.
           </li>
       </ul>
 
-      <button class="btn btn-light btn-block" (click)="finishOrder()"
-              [disabled]="product.price.length == 0">Checkout
-      </button>
+    <a routerLink="/shopping-cart" class="btn btn-warning" >Go to Order</a>
+
   </div>
 </div>
-

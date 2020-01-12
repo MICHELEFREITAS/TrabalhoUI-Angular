@@ -15,7 +15,8 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
   selectedProducts: Product[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit() {
     this.getProducts();
@@ -62,7 +63,7 @@ export class ProductsComponent implements OnInit {
 
   // copia o produto para ser editado
   editProduct(product: Product) {
-    this.product = { ...product };
+    this.product = {...product};
   }
 
   // limpa o formulario

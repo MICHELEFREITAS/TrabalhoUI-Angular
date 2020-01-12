@@ -1,44 +1,45 @@
-
 <body>
-  <div style="text-align:center;">
-   <img center src="./assets/img/logo2.png" style="width:100%" />
-   </div>
+<div style="text-align:center;">
+  <img center src="./assets/img/logo2.png" style="width:100%"/>
+</div>
 </body>
-<div class="container">
-  <button type="button" class="btn btn-primary" (click)="sendToCart()">Checkout Cart</button>
+<div class="col-12">
+  <button type="button" class="btn btn-warning" (click)="sendToCart()">Checkout to Cart</button>
+  <a routerLink="/shopping-cart" class="btn btn-success" (click)="sendToCart()">Add To Cart</a>
+
 </div>
 
 <div class="row card-deck">
-    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
-      <div class="card text-center">
-        <div class="card-header">
-          <h4>{{product.productName}}</h4>
-        </div>
+  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+    <div class="card text-center">
+      <div class="card-header">
+        <h4>{{product.productName}}</h4>
+      </div>
 
-        <div class="card-body">
-          <a href="#"><img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
-          <h5 class="card-title">${{product.price}}</h5>
-        </div>
+      <div class="card-body">
+        <a href="#"><img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
+        <h5 class="card-title">${{product.price}}</h5>
+      </div>
 
-        <div>
-          <!-- <div class="col-4 padding-0" >
-           <input type="number" min="1" class="form-control" [(ngModel)]=product.quantity>
-       </div>
-       <div class="col-4 padding-0">
-         <!-- <button class="btn-primary"  href="/shopping-cart"(click)="cart()"
-        [disabled]="product.quantity <= 0">Add To Cart
+      <div>
+        <!-- <div class="col-4 padding-0" >
+         <input type="number" min="1" class="form-control" [(ngModel)]=product.quantity>
+     </div>
+     <div class="col-4 padding-0">
+       <! -- <button class="btn-primary"  href="/shopping-cart"(click)="cart()"
+      [disabled]="product.quantity <= 0">Add To Cart
 
 </button>-->
 
-        <a routerLink="/shopping-cart" class="btn btn-primary">Add To Cart</a>
+        <button type="button" class="btn btn-primary" (click)="selectProduct(product)">Add To Cart</button>
 
-            <!-- </div>
-          <div class="col-12">
-            <!-- <button class="btn-primary"
-          (click)="removeFromCart(product)">Remove From Cart
-  </button>
-          </div>-->
-        </div>
+        <!-- </div>
+      <div class="col-12">
+        <! -- <button class="btn-primary"
+      (click)="removeFromCart(product)">Remove From Cart
+</button>
+      </div>-->
+      </div>
 
     </div>
   </div>
