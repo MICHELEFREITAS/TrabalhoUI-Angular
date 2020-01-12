@@ -4,9 +4,7 @@
 </div>
 </body>
 <div class="col-12">
-  <button type="button" class="btn btn-warning" (click)="sendToCart()">Checkout to Cart</button>
-  <a routerLink="/shopping-cart" class="btn btn-success" (click)="sendToCart()">Add To Cart</a>
-
+  <a routerLink="/shopping-cart" class="btn btn-warning" (click)="sendToCart()">Checkout to Cart</a>
 </div>
 
 <div class="row card-deck">
@@ -15,12 +13,10 @@
         <div class="card-header">
           <h4>{{product.productName}}</h4>
         </div>
-
         <div class="card-body">
           <a href="#"><img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
           <h5 class="card-title">${{product.price}}</h5>
         </div>
-
       <div>
         <!-- <div class="col-4 padding-0" >
          <input type="number" min="1" class="form-control" [(ngModel)]=product.quantity>
@@ -40,7 +36,6 @@
   </button>
           </div>-->
         </div>
-
     </div>
   </div>
 </div>
