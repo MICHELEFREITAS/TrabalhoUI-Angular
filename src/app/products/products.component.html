@@ -5,18 +5,19 @@
    </div>
 
 <div class="superior" >
-<div class="card text-white bg-info mb-3" style="max-width: 35rem;height:15rem;">
+<div class="card text-white bg-info mb-3" style="max-width: 40rem;height:20rem;">
   <div class="card-header text-center"> Purchase Summary</div>
   <div class="card-body">
-    <h5 class="card-title">Total: ${{product.price}}</h5>
+    <h5 class="card-title" >Total: ${{product.price}}</h5>
       <hr>
       <h6 class="card-title">Items bought:</h6>
 
-      <ul>
-          <li *ngFor="let product">
-              {{product.name }} - {{product.price}} pcs.
+      <!-- <ul>
+         <li *ngFor="let product of products">
+           <li>
+              {{product.productName}} - {{product.price}} pcs.
           </li>
-      </ul>
+      </ul>-->
 
       <button class="btn btn-light btn-block" (click)="sendToCart()" routerLink="/shopping-cart"
               [disabled]="product.price.length == 0">Checkout
