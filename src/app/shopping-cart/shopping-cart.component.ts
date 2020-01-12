@@ -24,8 +24,6 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   @Input() cart: Cart;
   carts: Cart = null;
   products: Product[] = [];
-  prodCaught: ProductCart = {} as ProductCart;
-  productsList: ProductCart[] = [];
 
   constructor(private shoppingCart: ShoppingCartService) {
 /*

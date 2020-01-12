@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Http, Response, Headers } from '@angular/http';
 
 @Component({
@@ -9,10 +9,11 @@ import { Http, Response, Headers } from '@angular/http';
 })
 export class LoginComponent implements OnInit {
 
-  //constructor(private router: Router, private http: Http) { }
+  constructor(private router: Router) { }
 
-
-  ngOnInit() {
+  LogOn() {
+    this.router.navigate(['products']);
+  }  ngOnInit() {
     console.log('login Component Running...');
   }
 

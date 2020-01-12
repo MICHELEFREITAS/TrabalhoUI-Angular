@@ -38,7 +38,7 @@ export class ProductsComponent implements OnInit {
 
   // copia o produto para ser enviado ao carrinho.
   sendToCart() {
-    this.productService.sendCartToBackend(this.selectedProducts).subscribe(x => console.log(x));
+    // this.productService.sendCartToBackend(this.selectedProducts).subscribe(x => console.log(x));
   }
 
   // copia o produto para ser enviado ao carrinho.
