@@ -1,39 +1,39 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductOrders} from "../models/product-orders.model";
-import {Subscription} from "rxjs/internal/Subscription";
-import {ProductService} from "../services/product.service";
+import {Subscription} from 'rxjs/internal/Subscription';
+import {Order} from '../models/order';
+import {OrderService} from '../services/order.service';
 
 @Component({
-    selector: 'app-orders',
-    templateUrl: './orders.component.html',
-    styleUrls: ['./orders.component.css']
+  selector: 'app-orders',
+  templateUrl: './orders.component.html',
+  styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-    orders: ProductOrders;
-    total: number;
-    paid: boolean;
-    sub: Subscription;
+  total: number;
+  paid: boolean;
 
-    constructor(private productService: ProductService) {
-       // this.orders = this.productService.ProductOrders;
-    }
+  order: Order = {} as Order;
 
-    ngOnInit() {
-        this.paid = false;
-       /* this.sub = this.productService.OrdersChanged.subscribe(() => {
-            this.orders = this.productService.ProductOrders;
-        });
-        this.loadTotal();
-    }
+  constructor(private orderService: OrderService) {
+  }
 
-    pay() {
-        this.paid = true;
-        this.productService.saveOrder(this.orders).subscribe();
-    }
+  ngOnInit() {
+    this.getOrder();
+    this.paid = false;
 
-    loadTotal() {
-        this.sub = this.productService.TotalChanged.subscribe(() => {
-            this.total = this.productService.Total;
-        });*/
-    }
+    /*  pay() {
+       this.paid = true;
+       this.productService.saveOrder(this.orders).subscribe();
+   }
+  */
+  }
+
+  // call service to get cart
+  getOrder() {
+    this.orderService.getOrder().subscribe((order: any) => {
+      this.order = order;
+      console.log(this.order);
+    });
+  }
+
 }

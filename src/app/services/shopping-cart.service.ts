@@ -1,15 +1,18 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
-import {Cart} from '../models/cart';
+import {Utils} from '../util/utils';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ShoppingCartService {
 
+  utils: Utils = new Utils();
+
   urlGetCart = 'http://loja-microservicos.info:8072/lastcart';
+  urlSendToOrder = 'http://loja-microservicos.info:8072/cart-rabbitmq/producer';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -19,37 +22,21 @@ export class ShoppingCartService {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
 
-
-  // Obtem todos os produtos
+  // get cart
   getCarts() {
-    return this.httpClient.get(this.urlGetCart)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.httpClient.get(this.urlGetCart);
+      // .pipe(
+      //   catchError(this.utils.handleError)
+      // );
   }
 
-/*
-  // Obtem todos os produtos
-  getCarts(): Observable<Cart> {
-    return this.httpClient.get<Cart>(this.urlGetCart)
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-*/
-
-  // Manipulação de erros
-  handleError(error: HttpErrorResponse) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Erro ocorreu no lado do client
-      errorMessage = error.error.message;
-    } else {
-      // Erro ocorreu no lado do servidor
-      errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
-    }
-    console.log(errorMessage);
-    return throwError(errorMessage);
+  // send amount to backend and there, to order service
+  sendToOrderBackend(amount: number) {
+    console.log(amount);
+    return this.httpClient.post(this.urlSendToOrder, JSON.stringify(amount), this.httpOptions);
+      // .pipe(
+      //   catchError(this.utils.handleError)
+      // );
   }
 
 }

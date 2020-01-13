@@ -36,18 +36,18 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  // copia o produto para ser enviado ao carrinho.
+  // call service to send selected products to backend.
   sendToCart() {
-    this.productService.sendCartToBackend(this.selectedProducts).subscribe(x => console.log(x));
+    this.productService.sendSelProdToBackend(this.selectedProducts).subscribe(x => console.log(x));
   }
 
-  // copia o produto para ser enviado ao carrinho.
+  // feed an array with the selected product
   selectProduct(productSelected: Product) {
     this.selectedProducts.push(productSelected);
     console.log('Product selected is: ' + JSON.stringify(productSelected));
   }
 
-  // Chama o serviço para obter todos os produto
+  // call service to get all products from database
   getProducts() {
     this.productService.getProducts().subscribe((products: Product[]) => {
       this.products = products;
