@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     console.log('login Component Running...');
   }
 
-  loginUser(){
+  loginUser() {
 
   }
 }

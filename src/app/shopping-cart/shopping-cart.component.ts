@@ -1,8 +1,8 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {Product} from '../models/product';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ShoppingCartService} from '../services/shopping-cart.service';
 import {Cart} from '../models/cart';
 import {ProductCart} from '../models/product-cart.model';
+import {CartToOrder} from '../models/cart-to-order';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,16 +11,12 @@ import {ProductCart} from '../models/product-cart.model';
 })
 export class ShoppingCartComponent implements OnInit, OnDestroy {
 
-  amount: number;
-
   carts: Cart = null;
+  private cartToOrder: CartToOrder;
 
   constructor(private shoppingCart: ShoppingCartService) {
 
-    this.amount = 0;
-    /*
-        this.orderFinished = false;
-    */
+    this.reset();
   }
 
   ngOnInit() {
@@ -32,14 +28,14 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     this.shoppingCart.getCarts().subscribe((carts: any) => {
       this.carts = carts;
       console.log(carts);
-      this.amount = this.calculateAmount(this.carts.productsList);
-      console.log(this.amount);
+      this.cartToOrder = {amount: (this.calculateAmount(this.carts.productsList))};
+      console.log(this.cartToOrder);
     });
   }
 
   // call service to send cart data to order in backend.
   sendCartToOrder() {
-    this.shoppingCart.sendToOrderBackend(this.amount).subscribe(x => console.log('amount to order: ' + x));
+    this.shoppingCart.sendToOrderBackend(this.cartToOrder).subscribe(x => console.log('amount to order: ' + x));
   }
 
   private calculateAmount(products: ProductCart[]): number {
@@ -51,7 +47,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   }
 
   reset() {
-    this.amount = 0;
+    this.cartToOrder = {amount: 0};
   }
 
   ngOnDestroy(): void {

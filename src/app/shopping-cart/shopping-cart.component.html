@@ -14,7 +14,7 @@
           {{product?.productName}}  - {{product?.price | currency:'EUR'}} - {{product?.quantity}} pcs.
         </li>
       </ul>
-      <h5 class="card-footer">Amount: {{amount | currency:'EUR'}}</h5>
+      <h5 class="card-footer">Amount: {{cartToOrder.amount | currency:'EUR'}}</h5>
 
       <a routerLink="/order" class="btn btn-warning" (click)="sendCartToOrder()">Go to Order</a>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { Http, Response, Headers } from '@angular/http';
 
 @Component({
@@ -9,14 +9,14 @@ import { Http, Response, Headers } from '@angular/http';
 })
 export class RegisterComponent implements OnInit {
 
-  
-  //constructor(private router: Router, private http: Http) { }
+
+  // constructor(private router: Router, private http: Http) { }
 
 
   ngOnInit() {
     console.log('Register Component Running...');
   }
 
-   
-  
+
+
 }
